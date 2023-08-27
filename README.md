@@ -1,1 +1,2 @@
-# Mixture-Differential-Distinguishers-of-Lightweight-Block-Ciphers
+This repository contains supplementary materials of the paper
+# Security Evaluation of Lightweight Block Ciphers against Mixture Differential Cryptanalysis
