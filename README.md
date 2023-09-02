@@ -158,7 +158,7 @@ Skinny:     Number of total right quadruples = 2^(7.864186)
 To test 6-round in algorithm with 14-round as parameter in random permutaion by running on 8 processors, run
 
 ```sh
-mpiexec -n 8 MANTIS_Quadruple_MPI_RNG 6 16
+mpiexec -n 8 MANTIS_Quadruple_MPI_RNG 6 14
 ```
 
 You get a summary of number of quaries and number of right quadruples on each process, total queries, number of total right quadruples and the probability. We also reserved codes (commented in current version) for comparison with full round MANTIS as random permutation. 
