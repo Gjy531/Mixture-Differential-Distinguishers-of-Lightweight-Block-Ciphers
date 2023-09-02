@@ -148,12 +148,12 @@ Skinny:     Number of total right quadruples = 2^(7.864186)
 
 
 
-[MANTIS] This repository contains two folders: [MILP](https://github.com/shenshensunshine/LightweightMixtureDifferentialCipher-Mantis/tree/main/MILP) and [Verification](https://github.com/shenshensunshine/LightweightMixtureDifferentialCipher-Mantis/tree/main/Verification). [MILP](https://github.com/shenshensunshine/LightweightMixtureDifferentialCipher-Mantis/tree/main/MILP) folder contains source codes to search for the mixture differential distinguishers covering 4-  6- and 8- round of Mantis. The codes are launched on Linux OS. To run our codes preinstallation is [Gurobi](https://www.gurobi.com/) for solving constraint programming problems. To get the 15 mixture trails for 5-round Mantis, run
+[MANTIS] This repository contains two folders: MILP and Verification. MILP folder contains source codes to search for the mixture differential distinguishers covering 4-  6- and 8- round of Mantis. The codes are launched on Linux OS. To run our codes preinstallation is Gurobi for solving constraint programming problems. To get the 15 mixture trails for 5-round Mantis, run
 
 + `g++ Mantis1.cpp basic.cpp -I/$GUROBI_HOME/include -L/$GUROBI_HOME/lib -lgurobi_c++ -lgurobi100 -lm -o Mantis1.out`
 + `nohup ./Mantis1.out`
 
-[Verification](https://github.com/shenshensunshine/LightweightMixtureDifferentialCipher-Mantis/tree/main/Verification) folder contains the verification codes to verify the quadruple distinguishers we found. To run the programm, MPI package need to be installed and change the library path and include path in Makefile according to your installation path.  Run `mingw32-make` (in Windows) to compile the C++ codes. 
+Verification folder contains the verification codes to verify the quadruple distinguishers we found. To run the programm, MPI package need to be installed and change the library path and include path in Makefile according to your installation path.  Run `mingw32-make` (in Windows) to compile the C++ codes. 
 
 To test 6-round in algorithm with 14-round as parameter in random permutaion by running on 8 processors, run
 
