@@ -1,0 +1,4 @@
+all:
+	g++ WARP_Quadruple_MPI_RNG.cpp --std=c++11 -Wall -O3 -o WARP_Quadruple_MPI_RNG -l msmpi -L "C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64" -I "C:\Program Files (x86)\Microsoft SDKs\MPI\Include"
+clean:
+	rm -f *.o WARP_Quadruple_MPI
