@@ -1,7 +1,7 @@
 /*
 all:
 	g++ SKINNY_Quadruple_MPI_RNG.cpp --std=c++11 -Wall -O3 -o SKINNY_Quadruple_MPI_RNG -l msmpi -L "C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64" -I "C:\Program Files (x86)\Microsoft SDKs\MPI\Include"
-    mpiexec -n 8 SKINNY_Quadruple_MPI_RNG 8
+    mpiexec -n 8 SKINNY_Quadruple_MPI_RNG 7
 clean:
 	rm -f *.o SKINNY_Quadruple_MPI
  * Quadruple distinguisher verification for Skinny
@@ -260,13 +260,13 @@ int main(int argc, char** argv){
     string outpatt;
     
     switch (atoi(argv[1])) {
-        case 8:
+        case 7:
         {
-            rd = 8;
-            inpatt = "--------------cx";
-            outpatt = "x****-******xs**";
-            N2 = 1 << 18; //test under N2 keys
-            N3 = 1 << 18; //generate N3 quadruples under each key
+            rd = 7;
+            inpatt = "------------s--c";
+            outpatt = "****c*******c***";
+            N2 = 1 << 8; //test under N2 keys
+            N3 = 1 << 8; //generate N3 quadruples under each key
         }
             break;
        

@@ -37,34 +37,54 @@ mpiexec -n 8 SKINNY_Quadruple_MPI_RNG 7
 You get a summary of number of quaries and number of right quadruples on each process, total queries, number of total right quadruples and the probability. We also reserved codes (commented in current version) for comparison with full round SKINNY as random permutation. 
 ```
 [+] Proc 0
-[+] PRNG initialized to 0xEC260DF0
+[+] PRNG initialized to 0xF3B4CE1C
 
  Quaries on each process = 2^(16.000000)
- 0 proc:     Right = 2^(4.857981)
+ 0 proc:     Right = 2^(5.129283)
  0 proc: randRight = 2^(0.000000)
- 1 proc:     Right = 2^(4.584963)
+ 1 proc:     Right = 2^(4.807355)
  1 proc: randRight = 2^(-inf)
  2 proc:     Right = 2^(5.000000)
- 2 proc: randRight = 2^(1.584963)
+ 2 proc: randRight = 2^(-inf)
  3 proc:     Right = 2^(4.954196)
- 3 proc: randRight = 2^(-inf)
- 4 proc:     Right = 2^(4.754888)
+ 3 proc: randRight = 2^(1.584963)
+ 4 proc:     Right = 2^(4.857981)
  4 proc: randRight = 2^(0.000000)
- 5 proc:     Right = 2^(5.169925)
+ 5 proc:     Right = 2^(4.857981)
  5 proc: randRight = 2^(0.000000)
- 6 proc:     Right = 2^(4.523562)
- 6 proc: randRight = 2^(-inf)
- 7 proc:     Right = 2^(4.954196)
- 7 proc: randRight = 2^(0.000000)
+ 6 proc:     Right = 2^(4.906891)
+ 6 proc: randRight = 2^(0.000000)
+ 7 proc:     Right = 2^(4.643856)
+ 7 proc: randRight = 2^(-inf)
 
                               Total queries = 2^(19.000000)
-Skinny:     Number of total right quadruples = 2^(7.864186)
-           Probability of right quadruples  = 2^(-11.1358)
+Skinny:     Number of total right quadruples = 2^(7.900867)
+           Probability of right quadruples  = 2^(-11.0991)
  RandPerm: Number of total right quadruples = 2^(2.807355)
             Probability of right quadruples = 2^(-16.1926)
- time on clock(): 0.327
+ time on clock(): 0.328
 
-[+] Time : 0.319375
+[+] Time : 0.314349
+[+] Skinny:      Number of right quadruples = 2^(5.129283)
+[+]           Probability of right quadruples = 2^(-10.8707)
+
+[+] RandPerm:      Number of right quadruples = 2^(0.000000)
+[+]           Probability of right quadruples = 2^(-16.0000)
+
+
+[+] Proc 1
+[+] PRNG initialized to 0xF3B4CE1D
+[+] Time : 0.310306
+[+] Skinny:      Number of right quadruples = 2^(4.807355)
+[+]           Probability of right quadruples = 2^(-11.1926)
+
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
+
+
+[+] Proc 5
+[+] PRNG initialized to 0xF3B4CE21
+[+] Time : 0.320602
 [+] Skinny:      Number of right quadruples = 2^(4.857981)
 [+]           Probability of right quadruples = 2^(-11.1420)
 
@@ -72,74 +92,54 @@ Skinny:     Number of total right quadruples = 2^(7.864186)
 [+]           Probability of right quadruples = 2^(-16.0000)
 
 
-[+] Proc 2
-[+] PRNG initialized to 0xEC260DF2
-[+] Time : 0.325180
-[+] Skinny:      Number of right quadruples = 2^(5.000000)
-[+]           Probability of right quadruples = 2^(-11.0000)
+[+] Proc 3
+[+] PRNG initialized to 0xF3B4CE1F
+[+] Time : 0.311494
+[+] Skinny:      Number of right quadruples = 2^(4.954196)
+[+]           Probability of right quadruples = 2^(-11.0458)
 
 [+] RandPerm:      Number of right quadruples = 2^(1.584963)
 [+]           Probability of right quadruples = 2^(-14.4150)
 
 
-[+] Proc 7
-[+] PRNG initialized to 0xEC260DF7
-[+] Time : 0.319456
-[+] Skinny:      Number of right quadruples = 2^(4.954196)
-[+]           Probability of right quadruples = 2^(-11.0458)
-
-[+] RandPerm:      Number of right quadruples = 2^(0.000000)
-[+]           Probability of right quadruples = 2^(-16.0000)
-
-
-[+] Proc 1
-[+] PRNG initialized to 0xEC260DF1
-[+] Time : 0.315805
-[+] Skinny:      Number of right quadruples = 2^(4.584963)
-[+]           Probability of right quadruples = 2^(-11.4150)
+[+] Proc 2
+[+] PRNG initialized to 0xF3B4CE1E
+[+] Time : 0.318592
+[+] Skinny:      Number of right quadruples = 2^(5.000000)
+[+]           Probability of right quadruples = 2^(-11.0000)
 
 [+] RandPerm:      Number of right quadruples = 2^(-inf)
 [+]           Probability of right quadruples = 2^(-inf)
 
 
-[+] Proc 4
-[+] PRNG initialized to 0xEC260DF4
-[+] Time : 0.316856
-[+] Skinny:      Number of right quadruples = 2^(4.754888)
-[+]           Probability of right quadruples = 2^(-11.2451)
+[+] Proc 7
+[+] PRNG initialized to 0xF3B4CE23
+[+] Time : 0.310786
+[+] Skinny:      Number of right quadruples = 2^(4.643856)
+[+]           Probability of right quadruples = 2^(-11.3561)
 
-[+] RandPerm:      Number of right quadruples = 2^(0.000000)
-[+]           Probability of right quadruples = 2^(-16.0000)
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 
 
 [+] Proc 6
-[+] PRNG initialized to 0xEC260DF6
-[+] Time : 0.322052
-[+] Skinny:      Number of right quadruples = 2^(4.523562)
-[+]           Probability of right quadruples = 2^(-11.4764)
-
-[+] RandPerm:      Number of right quadruples = 2^(-inf)
-[+]           Probability of right quadruples = 2^(-inf)
-
-
-[+] Proc 5
-[+] PRNG initialized to 0xEC260DF5
-[+] Time : 0.315282
-[+] Skinny:      Number of right quadruples = 2^(5.169925)
-[+]           Probability of right quadruples = 2^(-10.8301)
+[+] PRNG initialized to 0xF3B4CE22
+[+] Time : 0.310148
+[+] Skinny:      Number of right quadruples = 2^(4.906891)
+[+]           Probability of right quadruples = 2^(-11.0931)
 
 [+] RandPerm:      Number of right quadruples = 2^(0.000000)
 [+]           Probability of right quadruples = 2^(-16.0000)
 
 
-[+] Proc 3
-[+] PRNG initialized to 0xEC260DF3
-[+] Time : 0.320933
-[+] Skinny:      Number of right quadruples = 2^(4.954196)
-[+]           Probability of right quadruples = 2^(-11.0458)
+[+] Proc 4
+[+] PRNG initialized to 0xF3B4CE20
+[+] Time : 0.310268
+[+] Skinny:      Number of right quadruples = 2^(4.857981)
+[+]           Probability of right quadruples = 2^(-11.1420)
 
-[+] RandPerm:      Number of right quadruples = 2^(-inf)
-[+]           Probability of right quadruples = 2^(-inf)
+[+] RandPerm:      Number of right quadruples = 2^(0.000000)
+[+]           Probability of right quadruples = 2^(-16.0000)
 ```
 
 
