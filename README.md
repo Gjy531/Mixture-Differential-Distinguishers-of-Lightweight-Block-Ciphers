@@ -1072,115 +1072,115 @@ nohup ./WARP.out
 
 To run the verification programm, MPI package need to be installed and change the library path and include path in Makefile according to your installation. Run  `mingw32-make` (in Windows) to compile the C++ codes.
 
-To test 12-round by running on 8 processors, run
+To test 13-round by running on 8 processors, run
 
 ```sh
-mpiexec -n 8 WARP_Quadruple_MPI_RNG 12
+mpiexec -n 8 WARP_Quadruple_MPI_RNG 13
 ```
 You get a summary of number of quaries and number of right quadruples on each process, total queries, number of total right quadruples and the probability. We also reserved codes (commented in current version) for comparison with full round WARP as random permutation. 
 ```
 [+] Proc 0
-[+] PRNG initialized to 0xF25A3160
+[+] PRNG initialized to 0xF39D570A
 
  Quaries on each process = 2^(24.000000)
- 0 proc:     Right = 2^(12.047124)
- 0 proc: randRight = 2^(1.000000)
- 1 proc:     Right = 2^(12.050189)
- 1 proc: randRight = 2^(2.000000)
- 2 proc:     Right = 2^(12.022021)
+ 0 proc:     Right = 2^(1.584963)
+ 0 proc: randRight = 2^(-inf)
+ 1 proc:     Right = 2^(0.000000)
+ 1 proc: randRight = 2^(-inf)
+ 2 proc:     Right = 2^(-inf)
  2 proc: randRight = 2^(-inf)
- 3 proc:     Right = 2^(12.075479)
- 3 proc: randRight = 2^(0.000000)
- 4 proc:     Right = 2^(12.026523)
+ 3 proc:     Right = 2^(-inf)
+ 3 proc: randRight = 2^(-inf)
+ 4 proc:     Right = 2^(1.000000)
  4 proc: randRight = 2^(-inf)
- 5 proc:     Right = 2^(11.999648)
- 5 proc: randRight = 2^(0.000000)
- 6 proc:     Right = 2^(12.017156)
- 6 proc: randRight = 2^(0.000000)
- 7 proc:     Right = 2^(12.066426)
+ 5 proc:     Right = 2^(0.000000)
+ 5 proc: randRight = 2^(-inf)
+ 6 proc:     Right = 2^(1.000000)
+ 6 proc: randRight = 2^(-inf)
+ 7 proc:     Right = 2^(1.000000)
  7 proc: randRight = 2^(-inf)
 
                               Total queries = 2^(27.000000)
- WARP:     Number of total right quadruples = 2^(15.038276)
-           Probability of right quadruples  = 2^(-11.9617)
- RandPerm: Number of total right quadruples = 2^(3.169925)
-            Probability of right quadruples = 2^(-23.8301)
- time on clock(): 2171.55
-
-[+] Time : 2167.330684
-[+] WARP:      Number of right quadruples = 2^(12.047124)
-[+]           Probability of right quadruples = 2^(-11.9529)
-
-[+] RandPerm:      Number of right quadruples = 2^(1.000000)
-[+]           Probability of right quadruples = 2^(-23.0000)
+ WARP:     Number of total right quadruples = 2^(3.459432)
+           Probability of right quadruples  = 2^(-23.5406)
+ RandPerm: Number of total right quadruples = 2^(-inf)
+            Probability of right quadruples = 2^(-inf)
+ time on clock(): 1553.65
 
 
 [+] Proc 1
-[+] PRNG initialized to 0xF25A3161
-[+] Time : 2162.215778
-[+] WARP:      Number of right quadruples = 2^(12.050189)
-[+]           Probability of right quadruples = 2^(-11.9498)
-
-[+] RandPerm:      Number of right quadruples = 2^(2.000000)
-[+]           Probability of right quadruples = 2^(-22.0000)
-
-
-[+] Proc 2
-[+] PRNG initialized to 0xF25A3162
-[+] Time : 2171.540201
-[+] WARP:      Number of right quadruples = 2^(12.022021)
-[+]           Probability of right quadruples = 2^(-11.9780)
+[+] PRNG initialized to 0xF39D570B
+[+] Time : 1550.768197
+[+] WARP:      Number of right quadruples = 2^(0.000000)
+[+]           Probability of right quadruples = 2^(-24.0000)
 
 [+] RandPerm:      Number of right quadruples = 2^(-inf)
 [+]           Probability of right quadruples = 2^(-inf)
 
 
-[+] Proc 7
-[+] PRNG initialized to 0xF25A3167
-[+] Time : 2164.921349
-[+] WARP:      Number of right quadruples = 2^(12.066426)
-[+]           Probability of right quadruples = 2^(-11.9336)
+[+] Proc 5
+[+] PRNG initialized to 0xF39D570F
+[+] Time : 1553.647120
+[+] WARP:      Number of right quadruples = 2^(0.000000)
+[+]           Probability of right quadruples = 2^(-24.0000)
 
 [+] RandPerm:      Number of right quadruples = 2^(-inf)
 [+]           Probability of right quadruples = 2^(-inf)
 
 
 [+] Proc 4
-[+] PRNG initialized to 0xF25A3164
-[+] Time : 2168.334168
-[+] WARP:      Number of right quadruples = 2^(12.026523)
-[+]           Probability of right quadruples = 2^(-11.9735)
+[+] PRNG initialized to 0xF39D570E
+[+] Time : 1544.361395
+[+] WARP:      Number of right quadruples = 2^(1.000000)
+[+]           Probability of right quadruples = 2^(-23.0000)
+
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
+
+[+] Time : 1543.055936
+[+] WARP:      Number of right quadruples = 2^(1.584963)
+[+]           Probability of right quadruples = 2^(-22.4150)
 
 [+] RandPerm:      Number of right quadruples = 2^(-inf)
 [+]           Probability of right quadruples = 2^(-inf)
 
 
 [+] Proc 3
-[+] PRNG initialized to 0xF25A3163
-[+] Time : 2168.361060
-[+] WARP:      Number of right quadruples = 2^(12.075479)
-[+]           Probability of right quadruples = 2^(-11.9245)
+[+] PRNG initialized to 0xF39D570D
+[+] Time : 1549.205519
+[+] WARP:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 
-[+] RandPerm:      Number of right quadruples = 2^(0.000000)
-[+]           Probability of right quadruples = 2^(-24.0000)
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
+
+
+[+] Proc 7
+[+] PRNG initialized to 0xF39D5711
+[+] Time : 1551.599194
+[+] WARP:      Number of right quadruples = 2^(1.000000)
+[+]           Probability of right quadruples = 2^(-23.0000)
+
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 
 
 [+] Proc 6
-[+] PRNG initialized to 0xF25A3166
-[+] Time : 2163.556117
-[+] WARP:      Number of right quadruples = 2^(12.017156)
-[+]           Probability of right quadruples = 2^(-11.9828)
+[+] PRNG initialized to 0xF39D5710
+[+] Time : 1549.650931
+[+] WARP:      Number of right quadruples = 2^(1.000000)
+[+]           Probability of right quadruples = 2^(-23.0000)
 
-[+] RandPerm:      Number of right quadruples = 2^(0.000000)
-[+]           Probability of right quadruples = 2^(-24.0000)
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 
 
-[+] Proc 5
-[+] PRNG initialized to 0xF25A3165
-[+] Time : 2165.254359
-[+] WARP:      Number of right quadruples = 2^(11.999648)
-[+]           Probability of right quadruples = 2^(-12.0004)
+[+] Proc 2
+[+] PRNG initialized to 0xF39D570C
+[+] Time : 1547.956443
+[+] WARP:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 
-[+] RandPerm:      Number of right quadruples = 2^(0.000000)
-[+]           Probability of right quadruples = 2^(-24.0000)
+[+] RandPerm:      Number of right quadruples = 2^(-inf)
+[+]           Probability of right quadruples = 2^(-inf)
 ```

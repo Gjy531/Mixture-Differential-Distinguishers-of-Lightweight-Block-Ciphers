@@ -1,7 +1,7 @@
 /*
 all:
 	g++ WARP_Quadruple_MPI_RNG.cpp --std=c++11 -Wall -O3 -o WARP_Quadruple_MPI_RNG -l msmpi -L "C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64" -I "C:\Program Files (x86)\Microsoft SDKs\MPI\Include"
-    mpiexec -n 8 WARP_Quadruple_MPI_RNG 14
+    mpiexec -n 8 WARP_Quadruple_MPI_RNG 13 
 clean:
 	rm -f *.o WARP_Quadruple_MPI
  * Quadruple distinguisher verification for WARP
@@ -178,22 +178,7 @@ void enc(uint8_t R, uint8_t plaintext[32], uint8_t ciphertext[32], uint8_t RK[][
 
 void genQuadruple(uint8_t rd, uint8_t p0[32], uint8_t p1[32], uint8_t p2[32], uint8_t p3[32], string inpatt_state){
     int i;
-    uint8_t randcell0, randcell1,randcell2,randcell3;
-    
-    // fix a nonzero difference for four columns
-    randcell0= dis2(gen);
-    randcell1 = dis2(gen);
-    randcell2 = dis2(gen);
-    randcell3 = dis2(gen);
-    switch (rd){
-        case 8: case 10:
-            randcell1 = randcell0;
-            break;
-        default:
-            break;
-    }
-    
-    //randcell = 0xA;
+
     for (i = 0; i < 32; i++){
         switch (inpatt_state[i]){
             case '-':
@@ -205,58 +190,18 @@ void genQuadruple(uint8_t rd, uint8_t p0[32], uint8_t p1[32], uint8_t p2[32], ui
             case 's':
                 p0[i] = dis(gen);
                 p1[i] = p0[i];
-                
-               switch (i){
-                    case 0: case 4: case 8: case 12:
-                        p2[i] = p0[i] ^ randcell0;
-                        break;
-                    case 1: case 5: case 9: case 13:
-                        p2[i] = p0[i] ^ randcell1;
-                        break;
-                    case 2: case 6: case 10: case 14:
-                        p2[i] = p0[i] ^ randcell2;
-                        break;
-                    default:
-                        p2[i] = p0[i] ^ randcell3;
-               }
-                
+                p2[i] = p0[i] ^ dis2(gen);
                 p3[i] = p2[i];
                 break;
             case 'c':
                 p0[i] = dis(gen);
-                switch (i){
-                    case 0: case 4: case 8: case 12:
-                        p1[i] = p0[i] ^ randcell0;
-                        break;
-                    case 1: case 5: case 9: case 13:
-                        p1[i] = p0[i] ^ randcell1;
-                        break;
-                    case 2: case 6: case 10: case 14:
-                        p1[i] = p0[i] ^ randcell2;
-                        break;
-                    default:
-                        p1[i] = p0[i] ^ randcell3;
-                }
-                
+                p1[i] = p0[i] ^ dis2(gen);
                 p2[i] = p0[i];
                 p3[i] = p1[i];
                 break;
             case 'x':
                 p0[i] = dis(gen);
-                switch (i){
-                    case 0: case 4: case 8: case 12:
-                        p1[i] = p0[i] ^ randcell0;
-                        break;
-                    case 1: case 5: case 9: case 13:
-                        p1[i] = p0[i] ^ randcell1;
-                        break;
-                    case 2: case 6: case 10: case 14:
-                        p1[i] = p0[i] ^ randcell2;
-                        break;
-                    default:
-                        p1[i] = p0[i] ^ randcell3;
-                }
-                
+                p1[i] = p0[i] ^ dis2(gen);
                 p2[i] = p1[i];
                 p3[i] = p0[i];
                 break;
@@ -287,7 +232,7 @@ bool check_pattern(uint8_t c0[32], uint8_t c1[32], uint8_t c2[32], uint8_t c3[32
                     break;
                 }
             case 'c':
-                if ((c0[i]==c2[i]) and (c1[i]==c3[i]))
+                if ((c0[i]==c2[i]) and (c1[i]==c3[i]) and (c0[i]!=c1[i]))
                 
                     break;
                 else{
@@ -295,14 +240,14 @@ bool check_pattern(uint8_t c0[32], uint8_t c1[32], uint8_t c2[32], uint8_t c3[32
                     break;
                 }
             case 'x':
-                if ((c0[i]==c3[i]) and (c1[i]==c2[i]))
+                if ((c0[i]==c3[i]) and (c1[i]==c2[i]) and (c0[i]!=c1[i]))
                     break;
                 else{
                     flag = false;
                     break;
                 }
             case 's':
-                if ((c0[i]==c1[i]) and (c2[i]==c3[i]))
+                if ((c0[i]==c1[i]) and (c2[i]==c3[i]) and (c0[i]!=c2[i]))
                     break;
                 else{
                     flag = false;
@@ -379,17 +324,17 @@ UINT64 * testOnMultKey(uint8_t rd, UINT64 N2, UINT64 N3, string inpatt, string o
 int main(int argc, char** argv){
     
     UINT64 N2 = 1; //= 1 << 4; //test under N2 keys
-    UINT64 N3 = 1;;// = 1 << 10; //generate N3 quadruples under each key
-    uint8_t rd = 10;
+    UINT64 N3 = 1;;// = 1 << 10; //generate N3 quadruples under each key 
+    uint8_t rd = 13;
     string inpatt;
     string outpatt;
     
     switch (atoi(argv[1])) {
-        case 12:
+        case 13:
         {
-            rd = 12;
-            inpatt = "--ss---c---c---------s---c-cccxx";
-            outpatt = "***c*******c*******************c";
+            rd = 13;
+            inpatt = "-c-c--xx---c-cxs-s---------c-x--";
+            outpatt = "*c*****c********c**c************";
             N2 = 1 << 12; //test under N2 keys
             N3 = 1 << 12; //generate N3 quadruples under each key
         }
